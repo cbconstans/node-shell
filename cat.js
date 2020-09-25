@@ -1,6 +1,10 @@
-function cat() {
-    process.stdout.write(__dirname);
-     // process.stdout.write(process.cwd())
+const fs = require('fs');
+
+function cat(fileName) {
+    fs.readFile(fileName, 'utf8', (err, data) => {
+        if (err) throw err;
+        console.log(data);
+      });
 } 
   
 
